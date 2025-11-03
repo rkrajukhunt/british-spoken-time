@@ -14,25 +14,25 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SpecialMinutesStrategy implements TimeFormatStrategy {
 
-    private final NumberToWordConverter converter;
+  private final NumberToWordConverter converter;
 
-    @Override
-    public boolean canHandle(Time time) {
-        int minute = time.getMinute();
-        return (minute >= TimeConstants.SPECIAL_RANGE_1_START &&
-                minute <= TimeConstants.SPECIAL_RANGE_1_END) ||
-               (minute >= TimeConstants.SPECIAL_RANGE_2_START &&
-                minute <= TimeConstants.SPECIAL_RANGE_2_END);
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    int minute = time.getMinute();
+    return (minute >= TimeConstants.SPECIAL_RANGE_1_START
+        && minute <= TimeConstants.SPECIAL_RANGE_1_END)
+        || (minute >= TimeConstants.SPECIAL_RANGE_2_START
+        && minute <= TimeConstants.SPECIAL_RANGE_2_END);
+  }
 
-    @Override
-    public String format(Time time) {
-        return converter.getHourWord(time.getTwelveHourFormat()) + " " +
-                converter.getMinuteAsNumber(time.getMinute());
-    }
+  @Override
+  public String format(Time time) {
+    return converter.getHourWord(time.getTwelveHourFormat()) + " "
+        + converter.getMinuteAsNumber(time.getMinute());
+  }
 
-    @Override
-    public int getPriority() {
-        return 8;
-    }
+  @Override
+  public int getPriority() {
+    return 8;
+  }
 }

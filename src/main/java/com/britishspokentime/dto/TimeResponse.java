@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 @Schema(description = "Response object containing the British spoken form of time")
 public class TimeResponse {
 
-    @Schema(description = "Original time input", example = "12:00")
-    private String time;
+  @Schema(description = "Original time input", example = "12:00")
+  private String time;
 
-    @Schema(description = "British spoken form of the time", example = "noon")
-    private String spokenForm;
+  @Schema(description = "British spoken form of the time", example = "noon")
+  private String spokenForm;
 }

@@ -13,22 +13,22 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class MinutesPastStrategy implements TimeFormatStrategy {
 
-    private final NumberToWordConverter converter;
+  private final NumberToWordConverter converter;
 
-    @Override
-    public boolean canHandle(Time time) {
-        int minute = time.getMinute();
-        return minute > TimeConstants.MIN_MINUTE && minute <= TimeConstants.PAST_THRESHOLD;
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    int minute = time.getMinute();
+    return minute > TimeConstants.MIN_MINUTE && minute <= TimeConstants.PAST_THRESHOLD;
+  }
 
-    @Override
-    public String format(Time time) {
-        return converter.getMinuteWord(time.getMinute()) + " past " +
-                converter.getHourWord(time.getTwelveHourFormat());
-    }
+  @Override
+  public String format(Time time) {
+    return converter.getMinuteWord(time.getMinute()) + " past "
+        + converter.getHourWord(time.getTwelveHourFormat());
+  }
 
-    @Override
-    public int getPriority() {
-        return 7;
-    }
+  @Override
+  public int getPriority() {
+    return 7;
+  }
 }

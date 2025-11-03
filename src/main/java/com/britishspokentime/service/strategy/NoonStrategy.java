@@ -9,18 +9,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class NoonStrategy implements TimeFormatStrategy {
 
-    @Override
-    public boolean canHandle(Time time) {
-        return time.isNoon();
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    return time.isNoon();
+  }
 
-    @Override
-    public String format(Time time) {
-        return "noon";
-    }
+  @Override
+  public String format(Time time) {
+    return "noon";
+  }
 
-    @Override
-    public int getPriority() {
-        return 2;
-    }
+  @Override
+  public int getPriority() {
+    return 2;
+  }
 }

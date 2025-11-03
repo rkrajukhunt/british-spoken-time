@@ -13,20 +13,20 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class HalfPastStrategy implements TimeFormatStrategy {
 
-    private final NumberToWordConverter converter;
+  private final NumberToWordConverter converter;
 
-    @Override
-    public boolean canHandle(Time time) {
-        return time.getMinute() == TimeConstants.HALF_HOUR_MINUTES;
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    return time.getMinute() == TimeConstants.HALF_HOUR_MINUTES;
+  }
 
-    @Override
-    public String format(Time time) {
-        return "half past " + converter.getHourWord(time.getTwelveHourFormat());
-    }
+  @Override
+  public String format(Time time) {
+    return "half past " + converter.getHourWord(time.getTwelveHourFormat());
+  }
 
-    @Override
-    public int getPriority() {
-        return 5;
-    }
+  @Override
+  public int getPriority() {
+    return 5;
+  }
 }

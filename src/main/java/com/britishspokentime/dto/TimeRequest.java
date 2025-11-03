@@ -17,11 +17,11 @@ import lombok.NoArgsConstructor;
 @Schema(description = "Request object containing time in HH:mm format")
 public class TimeRequest {
 
-    @NotBlank(message = "Time is required")
-    @Pattern(
-            regexp = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
-            message = "Time must be in HH:mm format (00:00 to 23:59)"
-    )
-    @Schema(description = "Time in 24-hour format (HH:mm)", example = "12:00")
-    private String time;
+  @NotBlank(message = "Time is required")
+  @Pattern(
+      regexp = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      message = "Time must be in HH:mm format (00:00 to 23:59)"
+  )
+  @Schema(description = "Time in 24-hour format (HH:mm)", example = "12:00")
+  private String time;
 }

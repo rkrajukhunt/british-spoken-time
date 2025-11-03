@@ -14,19 +14,25 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfig {
 
-    @Bean
-    public OpenAPI britishSpokenTimeOpenAPI() {
-        return new OpenAPI()
-                .info(new Info()
-                        .title("British Spoken Time API")
-                        .description("REST API for converting digital time format (HH:mm) to British spoken form. " +
-                                "For example, converts '12:00' to 'noon' and '7:30' to 'half past seven'.")
-                        .version("1.0.0")
-                        .contact(new Contact()
-                                .name("Raju Khunt")
-                                .url("https://github.com/rkrajukhunt/british-spoken-time"))
-                        .license(new License()
-                                .name("MIT License")
-                                .url("https://opensource.org/licenses/MIT")));
-    }
+  /**
+   * Configures OpenAPI documentation for the British Spoken Time API.
+   *
+   * @return configured OpenAPI instance
+   */
+  @Bean
+  public OpenAPI britishSpokenTimeOpenApi() {
+    return new OpenAPI()
+        .info(new Info()
+            .title("British Spoken Time API")
+            .description("REST API for converting digital time format (HH:mm) to "
+                + "British spoken form. For example, converts '12:00' to 'noon' "
+                + "and '7:30' to 'half past seven'.")
+            .version("1.0.0")
+            .contact(new Contact()
+                .name("Raju Khunt")
+                .url("https://github.com/rkrajukhunt/british-spoken-time"))
+            .license(new License()
+                .name("MIT License")
+                .url("https://opensource.org/licenses/MIT")));
+  }
 }

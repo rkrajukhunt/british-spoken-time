@@ -9,18 +9,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class MidnightStrategy implements TimeFormatStrategy {
 
-    @Override
-    public boolean canHandle(Time time) {
-        return time.isMidnight();
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    return time.isMidnight();
+  }
 
-    @Override
-    public String format(Time time) {
-        return "midnight";
-    }
+  @Override
+  public String format(Time time) {
+    return "midnight";
+  }
 
-    @Override
-    public int getPriority() {
-        return 1;
-    }
+  @Override
+  public int getPriority() {
+    return 1;
+  }
 }

@@ -13,20 +13,20 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class QuarterToStrategy implements TimeFormatStrategy {
 
-    private final NumberToWordConverter converter;
+  private final NumberToWordConverter converter;
 
-    @Override
-    public boolean canHandle(Time time) {
-        return time.getMinute() == TimeConstants.THREE_QUARTER_MINUTES;
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    return time.getMinute() == TimeConstants.THREE_QUARTER_MINUTES;
+  }
 
-    @Override
-    public String format(Time time) {
-        return "quarter to " + converter.getHourWord(time.getNextHour());
-    }
+  @Override
+  public String format(Time time) {
+    return "quarter to " + converter.getHourWord(time.getNextHour());
+  }
 
-    @Override
-    public int getPriority() {
-        return 6;
-    }
+  @Override
+  public int getPriority() {
+    return 6;
+  }
 }

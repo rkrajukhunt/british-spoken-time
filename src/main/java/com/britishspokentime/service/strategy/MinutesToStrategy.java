@@ -14,21 +14,21 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class MinutesToStrategy implements TimeFormatStrategy {
 
-    private final NumberToWordConverter converter;
+  private final NumberToWordConverter converter;
 
-    @Override
-    public boolean canHandle(Time time) {
-        return time.getMinute() > TimeConstants.PAST_THRESHOLD;
-    }
+  @Override
+  public boolean canHandle(Time time) {
+    return time.getMinute() > TimeConstants.PAST_THRESHOLD;
+  }
 
-    @Override
-    public String format(Time time) {
-        return converter.getMinuteWord(TimeConstants.MINUTES_IN_HOUR - time.getMinute()) +
-                " to " + converter.getHourWord(time.getNextHour());
-    }
+  @Override
+  public String format(Time time) {
+    return converter.getMinuteWord(TimeConstants.MINUTES_IN_HOUR - time.getMinute())
+        + " to " + converter.getHourWord(time.getNextHour());
+  }
 
-    @Override
-    public int getPriority() {
-        return 9;
-    }
+  @Override
+  public int getPriority() {
+    return 9;
+  }
 }
