@@ -1,32 +1,32 @@
-package com.britishspokentime.service.strategy;
+package com.britishspokentime.service.strategy.impl;
 
-import com.britishspokentime.constants.TimeConstants;
 import com.britishspokentime.domain.Time;
+import com.britishspokentime.service.strategy.TimeFormatStrategy;
 import com.britishspokentime.service.util.NumberToWordConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
- * Strategy for formatting quarter to times (X:45).
+ * Strategy for formatting times on the hour (X:00).
  */
 @Component
 @RequiredArgsConstructor
-public class QuarterToStrategy implements TimeFormatStrategy {
+public class OclockStrategy implements TimeFormatStrategy {
 
   private final NumberToWordConverter converter;
 
   @Override
   public boolean canHandle(Time time) {
-    return time.getMinute() == TimeConstants.THREE_QUARTER_MINUTES;
+    return time.isOclock();
   }
 
   @Override
   public String format(Time time) {
-    return "quarter to " + converter.getHourWord(time.getNextHour());
+    return converter.getHourWord(time.getTwelveHourFormat()) + " o'clock";
   }
 
   @Override
   public int getPriority() {
-    return 6;
+    return 3;
   }
 }

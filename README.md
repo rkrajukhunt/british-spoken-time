@@ -183,8 +183,11 @@ src/main/java/com/britishspokentime/
 ├── exception/           # Global error handling
 └── service/
     ├── TimeService      # Business logic orchestration
+    ├── TimeConverter    # Time conversion interface
     ├── factory/         # Strategy factory
-    ├── strategy/        # 9 strategy implementations
+    ├── strategy/
+    │   ├── TimeFormatStrategy     # Strategy interface
+    │   └── impl/                  # 9 strategy implementations
     └── util/            # Number-to-word converter
 ```
 

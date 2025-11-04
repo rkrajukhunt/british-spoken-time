@@ -5,15 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 import com.britishspokentime.domain.Time;
-import com.britishspokentime.service.strategy.HalfPastStrategy;
-import com.britishspokentime.service.strategy.MidnightStrategy;
-import com.britishspokentime.service.strategy.MinutesPastStrategy;
-import com.britishspokentime.service.strategy.MinutesToStrategy;
-import com.britishspokentime.service.strategy.NoonStrategy;
-import com.britishspokentime.service.strategy.OclockStrategy;
-import com.britishspokentime.service.strategy.QuarterPastStrategy;
-import com.britishspokentime.service.strategy.QuarterToStrategy;
-import com.britishspokentime.service.strategy.SpecialMinutesStrategy;
+import com.britishspokentime.service.strategy.impl.HalfPastStrategy;
+import com.britishspokentime.service.strategy.impl.MidnightStrategy;
+import com.britishspokentime.service.strategy.impl.MinutesPastStrategy;
+import com.britishspokentime.service.strategy.impl.MinutesToStrategy;
+import com.britishspokentime.service.strategy.impl.NoonStrategy;
+import com.britishspokentime.service.strategy.impl.OclockStrategy;
+import com.britishspokentime.service.strategy.impl.QuarterPastStrategy;
+import com.britishspokentime.service.strategy.impl.QuarterToStrategy;
+import com.britishspokentime.service.strategy.impl.SpecialMinutesStrategy;
 import com.britishspokentime.service.strategy.TimeFormatStrategy;
 
 import org.junit.jupiter.api.Test;

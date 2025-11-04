@@ -1,7 +1,8 @@
-package com.britishspokentime.service.strategy;
+package com.britishspokentime.service.strategy.impl;
 
 import com.britishspokentime.constants.TimeConstants;
 import com.britishspokentime.domain.Time;
+import com.britishspokentime.service.strategy.TimeFormatStrategy;
 import com.britishspokentime.service.util.NumberToWordConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

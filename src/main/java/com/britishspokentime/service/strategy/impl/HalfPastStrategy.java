@@ -1,31 +1,33 @@
-package com.britishspokentime.service.strategy;
+package com.britishspokentime.service.strategy.impl;
 
+import com.britishspokentime.constants.TimeConstants;
 import com.britishspokentime.domain.Time;
+import com.britishspokentime.service.strategy.TimeFormatStrategy;
 import com.britishspokentime.service.util.NumberToWordConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
- * Strategy for formatting times on the hour (X:00).
+ * Strategy for formatting half past times (X:30).
  */
 @Component
 @RequiredArgsConstructor
-public class OclockStrategy implements TimeFormatStrategy {
+public class HalfPastStrategy implements TimeFormatStrategy {
 
   private final NumberToWordConverter converter;
 
   @Override
   public boolean canHandle(Time time) {
-    return time.isOclock();
+    return time.getMinute() == TimeConstants.HALF_HOUR_MINUTES;
   }
 
   @Override
   public String format(Time time) {
-    return converter.getHourWord(time.getTwelveHourFormat()) + " o'clock";
+    return "half past " + converter.getHourWord(time.getTwelveHourFormat());
   }
 
   @Override
   public int getPriority() {
-    return 3;
+    return 5;
   }
 }
