@@ -100,6 +100,10 @@
                                     </limits>
                                 </rule>
                             </rules>
+                            <excludes>
+                                <exclude>com/britishspokentime/BritishSpokenTimeApplication.class</exclude>
+                                <exclude>com/britishspokentime/dto/**</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
                 </executions>
