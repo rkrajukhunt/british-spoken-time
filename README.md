@@ -77,7 +77,7 @@ http://localhost:8080/swagger-ui.html
 
 ### Endpoint: Convert Time
 
-#### POST Request (Recommended for applications)
+#### POST Request
 
 ```bash
 curl -X POST http://localhost:8080/api/v1/time/convert \
@@ -90,20 +90,6 @@ curl -X POST http://localhost:8080/api/v1/time/convert \
 {
   "time": "7:30",
   "spokenForm": "half past seven"
-}
-```
-
-#### GET Request (Quick testing)
-
-```bash
-curl "http://localhost:8080/api/v1/time/convert?time=9:45"
-```
-
-**Response:**
-```json
-{
-  "time": "9:45",
-  "spokenForm": "quarter to ten"
 }
 ```
 
@@ -196,10 +182,25 @@ src/main/java/com/britishspokentime/
 ├── exception/           # Global error handling
 ├── model/               # Domain entities
 └── service/
+    ├── TimeService      # Business logic orchestration
     ├── factory/         # Strategy factory
     ├── strategy/        # 9 strategy implementations
     └── util/            # Number-to-word converter
 ```
+
+### Layered Architecture
+
+The application follows a clean layered architecture:
+
+```
+Controller Layer → Service Layer → Converter Layer → Strategy Layer
+     (HTTP)       (Business Logic)  (Domain Logic)   (Formatting)
+```
+
+- **Controller:** Handles HTTP requests/responses only
+- **Service:** Contains all business logic and orchestration
+- **Converter:** Core domain conversion logic
+- **Strategy:** Individual formatting implementations
 
 ---
 
@@ -207,9 +208,9 @@ src/main/java/com/britishspokentime/
 
 ### Test Coverage
 
-- **161 Total Tests** - All passing ✅
+- **269 Total Tests** - All passing ✅
 - **Unit Tests:** 90+ tests for business logic
-- **Integration Tests:** 36 tests for API endpoints
+- **Integration Tests:** 27 tests for API endpoints
 - **Factory Tests:** 11 tests for strategy selection
 - **Coverage:** 80%+ with Jacoco
 

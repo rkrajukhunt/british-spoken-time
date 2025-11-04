@@ -91,35 +91,6 @@ class TimeControllerIntegrationTest {
         .andExpect(jsonPath("$.status", is(400)));
   }
 
-  // ========== GET /api/v1/time/convert Tests ==========
-
-  @ParameterizedTest
-  @CsvSource({
-      "00:00, midnight",
-      "12:00, noon",
-      "1:00, one o'clock",
-      "7:30, half past seven",
-      "9:45, quarter to ten"
-  })
-  void testConvertTimeByQuery_validTimes(String time, String expectedSpoken) throws Exception {
-    mockMvc.perform(get("/api/v1/time/convert")
-            .param("time", time))
-        .andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.time", is(time)))
-        .andExpect(jsonPath("$.spokenForm", is(expectedSpoken)));
-  }
-
-  @ParameterizedTest
-  @ValueSource(strings = {"25:00", "12:60", "invalid", ""})
-  void testConvertTimeByQuery_invalidFormat(String invalidTime) throws Exception {
-    mockMvc.perform(get("/api/v1/time/convert")
-            .param("time", invalidTime))
-        .andExpect(status().isBadRequest())
-        .andExpect(jsonPath("$.status", is(400)))
-        .andExpect(jsonPath("$.error", is("Bad Request")));
-  }
-
   // ========== Health Check Test ==========
 
   @Test
