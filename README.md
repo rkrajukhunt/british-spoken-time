@@ -177,10 +177,10 @@ Constructor-based DI via Spring for loose coupling and testability.
 src/main/java/com/britishspokentime/
 ├── config/              # Spring configuration
 ├── constants/           # TimeConstants (no magic numbers)
-├── controller/          # REST endpoints
+├── controller/          # REST endpoints (no business logic)
+├── domain/              # Domain entities (Time model)
 ├── dto/                 # Request/Response objects
 ├── exception/           # Global error handling
-├── model/               # Domain entities
 └── service/
     ├── TimeService      # Business logic orchestration
     ├── factory/         # Strategy factory
