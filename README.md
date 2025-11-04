@@ -208,9 +208,10 @@ Controller Layer → Service Layer → Converter Layer → Strategy Layer
 
 ### Test Coverage
 
-- **269 Total Tests** - All passing ✅
-- **Unit Tests:** 90+ tests for business logic
+- **295 Total Tests** - All passing ✅
+- **Unit Tests:** 110+ tests for business logic
 - **Integration Tests:** 27 tests for API endpoints
+- **Service Tests:** 20 tests for service layer
 - **Factory Tests:** 11 tests for strategy selection
 - **Coverage:** 80%+ with Jacoco
 
