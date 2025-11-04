@@ -1,6 +1,6 @@
 package com.britishspokentime.service;
 
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 
 /**
  * Interface for converting time to British spoken form.

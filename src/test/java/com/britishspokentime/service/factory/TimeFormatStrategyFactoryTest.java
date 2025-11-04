@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import com.britishspokentime.service.strategy.HalfPastStrategy;
 import com.britishspokentime.service.strategy.MidnightStrategy;
 import com.britishspokentime.service.strategy.MinutesPastStrategy;

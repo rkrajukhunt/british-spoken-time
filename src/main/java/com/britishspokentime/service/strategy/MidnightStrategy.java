@@ -1,6 +1,6 @@
 package com.britishspokentime.service.strategy;
 
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import org.springframework.stereotype.Component;
 
 /**

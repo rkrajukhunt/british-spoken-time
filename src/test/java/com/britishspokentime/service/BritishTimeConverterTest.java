@@ -3,7 +3,7 @@ package com.britishspokentime.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

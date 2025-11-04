@@ -1,6 +1,6 @@
 package com.britishspokentime.service.factory;
 
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import com.britishspokentime.service.strategy.TimeFormatStrategy;
 import java.util.Comparator;
 import java.util.List;

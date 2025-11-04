@@ -9,7 +9,7 @@ import static org.mockito.Mockito.when;
 
 import com.britishspokentime.dto.TimeRequest;
 import com.britishspokentime.dto.TimeResponse;
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -2,7 +2,7 @@ package com.britishspokentime.service;
 
 import com.britishspokentime.dto.TimeRequest;
 import com.britishspokentime.dto.TimeResponse;
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

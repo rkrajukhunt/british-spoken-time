@@ -1,4 +1,4 @@
-package com.britishspokentime.model;
+package com.britishspokentime.domain;
 
 import com.britishspokentime.constants.TimeConstants;
 import lombok.AllArgsConstructor;

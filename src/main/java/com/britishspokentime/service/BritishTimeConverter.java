@@ -1,7 +1,7 @@
 package com.britishspokentime.service;
 
 import com.britishspokentime.constants.TimeConstants;
-import com.britishspokentime.model.Time;
+import com.britishspokentime.domain.Time;
 import com.britishspokentime.service.factory.TimeFormatStrategyFactory;
 import com.britishspokentime.service.strategy.TimeFormatStrategy;
 import lombok.RequiredArgsConstructor;
